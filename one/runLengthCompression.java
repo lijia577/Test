@@ -77,7 +77,7 @@ class runLengthCompression{
 		return total;
 	}
 
-	private int getDigit(int num){
+	private int getDigit(int num)
 		return String.valueOf(num).length();
 	}
 
