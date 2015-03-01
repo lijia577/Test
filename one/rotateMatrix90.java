@@ -42,7 +42,28 @@ class rotateMatrix{
 			}
 		}
 	}
+
+	public void rotate2(int m[][], int N){
+		//flip the whole matrix along the diagnal.
+		for(int i = 0 ; i < N ; i++){
+			for(int j = i+1; j<N; j++){
+				int tmp = m[i][j];
+				m[i][j] = m[j][i];
+				m[j][i] = tmp;
+			}
+		}
 	
+		//filp the whole matrix along a horizontal middle line. 	
+		for(int i = 0 ; i < N/2; i++){
+			for(int j = 0; j<N; j++){
+				int tmp = m[i][j];
+				m[i][j] = m[N-i-1][j];
+				m[N-1-i][j] = tmp;
+			}
+		}
+
+	}
+ 	 
 	public static void main(String args[]){
 		int a[][]={{1,2,3,4},
 			     {5,6,7,8},
@@ -50,7 +71,7 @@ class rotateMatrix{
 		             {13,14,15,16}};
 		
 		rotateMatrix ins = new rotateMatrix();
-		ins.rotate(a,4);
+		ins.rotate2(a,4);
 		int i = 0, j = 0;
 		for(i=0;i<4; i++){
 			for(j=0;j<4;j++){
