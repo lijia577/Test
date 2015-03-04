@@ -56,19 +56,49 @@ class PalindromeList{
 		if(s.empty()&& h==null) return true;
 		else return false;
 	}
-	
+
+	//check if linked list is palindrome recursively.
+	public boolean isPalindromeR(ListNode head){
+                //This is a way to split head into head and tail really.
+                ListNode node = this.isPalindromeR(head, head);
+                if(node == null) return false;
+                return true;
+        }
+
+        //This recursion stack has the same height with the number of nodes in the linked list. Loved it!!      
+        private ListNode isPalindromeR(ListNode left, ListNode right){
+       		//these ensures that right reaches to the end of list. yet, left = firstNode. 
+                if(right == null) return left;
+
+                // the recursion itself helps you to shift RIGHT to left direction. 
+                // returning LEFT help you shift LEFT to right direction. It also indicates if anything was wrong.
+           
+                left = this.isPalindromeR(left, right.next);
+                if(left != null){
+                        if(left.data==right.data){
+                                //matched! then go to next layer of parenthesis. 
+                                // You need to test the condition for the single node list. 
+                                if(left.next!=null) left = left.next;
+                                return left;
+                        }
+                }
+   		//You will reach here only if mismatch happens in prev recursion or now. 
+                return null;
+         }
+
+
 	public static void main(String args[]){
 		ListNode a = new ListNode(1);
 		ListNode b = new ListNode(2);
-		ListNode c = new ListNode(1);
+		ListNode c = new ListNode(2);
 		ListNode d = new ListNode(1);
-		ListNode e = new ListNode(2);	
+		ListNode e = new ListNode(1);	
 		a.next = b;
 		b.next = c;
 		c.next = d;
-		d.next = e;
+		//d.next = e;
 		PalindromeList inst = new PalindromeList();	
-		System.out.println(inst.isPalindrome(a));
+		System.out.println(inst.isPalindromeR(a));
 
 	}
 	
