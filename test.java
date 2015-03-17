@@ -21,7 +21,11 @@ enum Level{
 
 class test{
 	public static void main(String args[]){
+		
 		Animal a = new Dog("William");
+		a.hasTail();
+		Animal.hasTail();
+		/*
 		a.getName(); 
 		System.out.println(Suit.CLUB.value);	
 		Level l = Level.HIGH;
@@ -29,6 +33,7 @@ class test{
 		for(Level level: Level.values()){
 			System.out.println(level + " with value " + level.value);
 		}
+		*/
 	}
 }
 
@@ -39,6 +44,9 @@ class Animal{
 		this.name = name;
 	}
 
+	public static void hasTail(){
+		System.out.println("I have a tail");
+	}
 	public void getName(){
 		System.out.println(this.name);
 	}

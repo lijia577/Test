@@ -59,8 +59,9 @@ class PalindromeList{
 
 	//check if linked list is palindrome recursively.
 	public boolean isPalindromeR(ListNode head){
+		if(head ==null) return true;
                 //This is a way to split head into head and tail really.
-                ListNode node = this.isPalindromeR(head, head);
+                ListNode node = this.isPalindromeR(head, head); //if everything matches, node is the last node of the palindrome.
                 if(node == null) return false;
                 return true;
         }
@@ -76,7 +77,7 @@ class PalindromeList{
                 left = this.isPalindromeR(left, right.next);
                 if(left != null){
                         if(left.data==right.data){
-                                //matched! then go to next layer of parenthesis. 
+                                //matched! then go to next layer of `parenthesis. 
                                 // You need to test the condition for the single node list. 
                                 if(left.next!=null) left = left.next;
                                 return left;

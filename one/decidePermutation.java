@@ -23,15 +23,27 @@ class decidePermutation{
 		int lb = b.length();
 		if(la != lb) return false;
 		// we assume the char set is ASCII and use this to remember
+		int arr[] = new int[256];
+		for(int i = 0; i<a.length(); i++){
+			int tmp = a.charAt(i)-0;
+			System.out.println(tmp);
+			arr[tmp]++;
+		}		
+		for(int i = 0; i<b.length(); i++){
+			int tmp = a.charAt(i)-0;
+			arr[tmp]--;
+			if(arr[tmp]==-1) return false;
+		}
+		return true;
 		
 	}
 		
 
 	public static void main(String args[]){
 		decidePermutation x = new decidePermutation();
-		System.out.println(x.isPerm("qwerty","ytrewq"));	
-		System.out.println(x.isPerm("abc","cab"));
-		System.out.println(x.isPerm("cabr","burn"));
+		System.out.println(x.isPerm2("mwerty","ytrewq"));	
+		System.out.println(x.isPerm2("abc","cab"));
+		System.out.println(x.isPerm2("cabr","burn"));
 	}
 	
 }

@@ -1,5 +1,5 @@
 import java.util.*;
-
+//Given a list and a node, move all the elements smaller than the node before the node, move all the elements >= the node after it. 
 class ListNode{
 	int data;
 	ListNode next;

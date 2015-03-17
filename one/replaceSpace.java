@@ -10,11 +10,11 @@ public class replaceSpace{
 		int i, spaceCount = 0,adjlen =0; 
 		for(i = 0; i<al; i++){
 			if(arr[i]== ' ') spaceCount++;
-			if(arr[i]!= '\0') sl++;
+			if(arr[i]!= '\u0000')sl++;
 		}		
 		//space*2 because the space itself have length 1 left there.
 		adjlen = sl + spaceCount*2;
-		arr[adjlen--] = '\0';//you fill the last adjlen to be \0
+		arr[adjlen--] = '\u0000';//you fill the last adjlen to be \0
 		sl--;//adjust sl from length to index of last char.
 		while (sl>=0){ //sl could definitely >= 0. Your first char might be empty
 			if(arr[sl]==' '){
@@ -35,7 +35,7 @@ public class replaceSpace{
 			if(i%3==0) arr[i] = ' ';
 			else arr[i] = (char)(48+i);
 		}
-		arr[i-1]='\0';
+		arr[i-1]='\u0000';
 		System.out.println(arr);
 		System.out.println("-----");	
 		replaceSpace a = new replaceSpace();

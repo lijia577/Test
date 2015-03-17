@@ -7,11 +7,11 @@ class checkRotation{
 			return false; //their length has to match to be rotation.
 		}
 
-		String tmp = s2 + s2;
+		String tmp = s1 + s2;
 		if(this.isSubstring(tmp,s1)){
 			return true;
 		}else{
-		return false;
+			return false;
 		}
 	}
 

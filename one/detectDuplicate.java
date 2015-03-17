@@ -47,15 +47,11 @@ class detectDuplicates{
 	public boolean checkDup3(String str){
 		//use a long as an array. It has 64 bits. But it is signed. 
 		BitSet a = new BitSet(256);
-		//long is 64 bit long in java. So it's enough for 256 charset. 
 		for(int i=0; i<str.length(); i++){
 			int num = str.charAt(i);
-			//use bit test to see if at location num the value is 1. 
-			//You should use '>0' below, why? 
 			if(a.get(num)){
 				return true;
 			}
-			//use bit set to set the location num to have value 1
 			a.set(num);
 		}	
 		return false;
