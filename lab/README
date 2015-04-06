@@ -1,0 +1,11 @@
+First, run: 
+	python filter.py inputaa outa
+	python filter.py inputab outb
+	......
+
+next, cat outa outb .... into allout
+
+next, sort big
+      sort allout
+
+Finally, comm -3 sortedbig sortedallout
