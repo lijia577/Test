@@ -4,12 +4,14 @@
 
 import sys
 import time
+import os
 
+os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (0.2, 1100))
 filename = []
 for arg in sys.argv:
 	filename.append(arg)
 
-verbose = True
+verbose = False
 count =0
 Lsmall = []
 with open('small','r') as small:
@@ -52,4 +54,4 @@ with open(filename[2],'w') as res:
 					break
 
 
-
+os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (0.5, 2500))
